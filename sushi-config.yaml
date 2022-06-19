@@ -4,7 +4,7 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.dk.hackathon.2022
-canonical: http://example.org
+canonical: http://hl7.dk/fhir/Hackathon-Sep-2022
 name: HL7-DK-Hackathon-Sep-2022
 # title: Example Title
 # description: Example Implementation Guide for getting started with SUSHI
