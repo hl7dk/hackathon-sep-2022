@@ -27,7 +27,7 @@ publisher:
 dependencies:
 #   hl7.fhir.us.core: 3.1.0
     dk.ehealth.sundhed.fhir.ig.core:
-     id: dk.ehealth.sundhed.fhir.ig.core
+     id: dk_ehealth_sundhed_fhir_ig_core
      uri: https://docs.ehealth.sundhed.dk/latest/ig/package.tgz
      version: 1.0.0
 #
