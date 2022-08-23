@@ -2,14 +2,13 @@
 // This file can be renamed, and additional FSH files can be added.
 // SUSHI will look for definitions in any file using the .fsh ending.
 Profile: MyPatient
-Parent: ehealth-patient 
+Parent: DkCorePatient
 Description: "An example profile of the Patient resource."
 * name 1..* MS
 
 Instance: PatientExample
 InstanceOf: MyPatient
 Usage: #example
-* meta.profile = "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"
 * identifier.use = #official
 * identifier.system = "urn:oid:1.2.208.176.1.2"
 * identifier.value = "2512489996"
