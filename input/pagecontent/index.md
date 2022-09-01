@@ -42,7 +42,7 @@ Start new single gradle project, go to the build.gradle and add the following Gr
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha1'
 ```
 
-More repositories and possibly newer version can be found at: https://mvnrepository.com 
+More repositories and possibly newer version can be found at: <https://mvnrepository.com> 
 
 Test your setup by making your first hapi FHIR application. Make a new java-class and run the following main class. It makes a search for patients named Chuck. Note that we use the hapi FHIR server in this example.
 
@@ -123,12 +123,12 @@ Casen er sammensat på baggrund af:
 <https://en.wikipedia.org/wiki/Children%27s_Depression_Inventory#cite_note-CDI-1>
 
 ### Om denne IG
-Denne IG overholder i det store hele FUT implementation guiden, men der er ikke lavet en egentlig afhængighed, fordi der var brug for nye koder, da det er en ny klinisk case. Tag et kig derover i løbet af dagen: https://docs.ehealth.sundhed.dk/latest-released/ig/index.html
-Til gengæld har vi lavet en formel afhængighed mellem denne implementation guide og dk-core https://hl7.dk/fhir/core/1.1.0/index.html
+Denne IG overholder i det store hele FUT implementation guiden, men der er ikke lavet en egentlig afhængighed, fordi der var brug for nye koder, da det er en ny klinisk case. Tag et kig derover i løbet af dagen: <https://docs.ehealth.sundhed.dk/latest-released/ig/index.html>
+Til gengæld har vi lavet en formel afhængighed mellem denne implementation guide og dk-core <https://hl7.dk/fhir/core/1.1.0/index.html>
 
 Sæt dig ind i de krav der er til data, ved at trykke på artifact summary. Her får du adgang til spørgeskema, profiler, CodeSystems og ValueSets
 
-Profilerne i denne IG ligger også på FHIR serveren, og styrer om I får lov til at aflevere jeres data vha. FHIR valideringsmekanismen. Det kan også testes lokalt, inden man sender en instans afsted vha FHIR-validator find dokumentation her: https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator
+Profilerne i denne IG ligger også på FHIR serveren, og styrer om I får lov til at aflevere jeres data vha. FHIR valideringsmekanismen. Det kan også testes lokalt, inden man sender en instans afsted vha FHIR-validator find dokumentation her: <https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator>
 
 ### Øvrige punkter
 Pointen med dagen er, at gøre jer fortrolige med FHIR og den tilhørende dokumnetation. Derfor ikke så mange detaljer her, bare lidt til at sætte jer i gang:
