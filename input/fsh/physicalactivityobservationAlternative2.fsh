@@ -1,10 +1,9 @@
-Profile: PhysicalActivityObservation
+Profile: PhysicalActivityObservationSCT
 Parent: Observation
-Id: PhysicalActivityObservation
+Id: PhysicalActivityObservationSCT
 Title: "PhysicalActivityObservation"
 Description: "FUT like eHealth Observation for daily physical activity"
-* code from ObservationCodes
-* code = ObservationCodeSystem#physicalactivity
+* code = http://snomed.info/sct#68130003
 * subject 1..
 * subject only Reference(MyPatient)
 * extension contains http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare named workflow-episodeOfCare 1..1
@@ -19,14 +18,12 @@ Description: "FUT like eHealth Observation for daily physical activity"
 * component ..2
 * component contains activityType 1..1 and duration 1..1
 * component[activityType]
-  * code from ObservationCodes
-  * code = ObservationCodeSystem#activitytype
+  * code = http://snomed.info/sct#68130003:719722006=415577004
   * value[x] only CodeableConcept
     * ^short = "Type of activity"
     * ^definition =  "Type of activity performed"
 * component[duration]
-  * code from ObservationCodes
-  * code = ObservationCodeSystem#activityduration
+  * code = http://snomed.info/sct#68130003:704323007=385673002
   * value[x] only Quantity
     * ^short = "Duration of activity"
     * ^definition =  "Duration of activity in minutes"

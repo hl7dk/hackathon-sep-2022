@@ -3,8 +3,7 @@ Parent: Observation
 Id: SleepObservation
 Title: "SleepObservation"
 Description: "FUT like eHealth Observation for daily hours of sleep"
-* code from ObservationCodes
-* code = #hsleep
+* code = http://snomed.info/sct#248263006
 * subject 1..
 * subject only Reference(MyPatient)
 * extension contains http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare named workflow-episodeOfCare 1..1
