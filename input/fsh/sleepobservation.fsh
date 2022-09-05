@@ -15,4 +15,20 @@ Description: "FUT like eHealth Observation for daily hours of sleep"
 * value[x] only Quantity
   * ^short = "Hours of sleep"
   * ^definition =  "Time (in hours) of sleep within the given period reported"
+  * unit = "Hours"
 * component ..0
+
+Instance: SleepObservationExample
+InstanceOf: SleepObservation
+Usage: #example
+Title: "SleepObservationExample"
+Description: "Example of a sleep observation"
+* extension[workflow-episodeOfCare].valueReference = Reference(EpisodeOfCareExample)
+* status = #final
+* subject = Reference(PatientExample)
+* effectivePeriod
+  * start = "2022-09-05T12:00:00+02:00"
+  * end = "2022-09-06T12:00:00+02:00"
+* performer = Reference(PatientExample)
+* valueQuantity
+  * value = 5

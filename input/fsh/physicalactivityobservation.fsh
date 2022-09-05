@@ -15,3 +15,19 @@ Description: "FUT like eHealth Observation for daily physical activity"
   * ^short = "Minutes of activity"
   * ^definition =  "Time (in minutes) doing the activity during the given period reported"
 * component ..0
+
+Alias: $SCT = http://snomed.info/sct
+
+Instance: PhysicalActivityObservationExample
+InstanceOf: PhysicalActivityObservation
+Usage: #example
+Title: "PhysicalActivityObservationExample"
+Description: "Example of a physical activity observation"
+* extension[workflow-episodeOfCare].valueReference = Reference(EpisodeOfCareExample)
+* status = #final
+* code = $SCT#129006008 "Walking"
+* subject = Reference(PatientExample)
+* effectivePeriod
+  * start = "2022-09-05T00:00:00+02:00"
+  * end = "2022-09-06T00:00:00+02:00"
+* performer = Reference(PatientExample)
