@@ -6,4 +6,3 @@ Description: "Observation codes value set"
 * http://snomed.info/sct#68130003
 * http://snomed.info/sct#68130003:719722006=415577004
 * http://snomed.info/sct#248263006
-//* include codes from system ObservationCodeSystem
