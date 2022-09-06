@@ -14,6 +14,7 @@ Description: "FUT like eHealth Observation for daily physical activity"
 * value[x] only Quantity
   * ^short = "Minutes of activity"
   * ^definition =  "Time (in minutes) doing the activity during the given period reported"
+  * unit = "Minutes"
 * component ..0
 
 Alias: $SCT = http://snomed.info/sct
