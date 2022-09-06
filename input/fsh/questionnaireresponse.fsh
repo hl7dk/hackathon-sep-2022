@@ -1,10 +1,10 @@
-Profile: TelemedicineQuestionnaireRepsonse
+Profile: TelemedicineQuestionnaireResponse
 Parent: QuestionnaireResponse
-Id: TelemedicineQuestionnaireRepsonse
-Title: "TelemedicineQuestionnaireRepsonse"
+Id: TelemedicineQuestionnaireResponse
+Title: "TelemedicineQuestionnaireResponse"
 Description: "FUT like eHealth QuestionnaireResponse"
 * extension contains http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare named workflow-episodeOfCare 1..1
-* questionnaire only Canonical(TelemedicineQuestionnaire)
+* questionnaire 1..
 * subject 1..
 * authored 1..
 * source 1..
