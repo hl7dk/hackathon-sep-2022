@@ -15,68 +15,58 @@ Velkommen til FHIR Hackathon 2022. Herunder finder du en foreslået sekvens for 
 * Ekstra efter eget valg fx FHIR-profilering, sikkerhedsmodeller i SMART-ON-FHIR eller intro til danske FHIR projekter.
 
 ### Opsæt dit udviklingsmiljø
-Til Hackathon er det vigtigt at du medbringer en computer med et kørende udviklingsmiljø. Vi foreslår, at du bruger java eller .Net (C#). Der er også FHIR referenceimplementeringer i andre sprog, men for at bruge dem, skal du være rimeligt selvkørende.
+Til Hackathon er det vigtigt at du medbringer en computer med et kørende udviklingsmiljø. Vi foreslår, at du bruger Java eller .NET (C#). Der er også FHIR referenceimplementeringer i andre sprog, men for at bruge dem, skal du være rimeligt selvkørende.
 
-* Vælger du java kommer du til at bruge Hapi FHIR referenceimplementeringen. Det kræver ifølge dokumentationen mindst at JDK8 er installeret. Vores erfaring er, at man sagtens kan tage en nyere version fx JDK17. Husk også en IDE fx Intellij.
+* Vælger du Java kommer du til at bruge HAPI FHIR referenceimplementeringen. Det kræver ifølge dokumentationen mindst at JDK11 er installeret. Vores erfaring er, at man sagtens kan tage en nyere version fx JDK17. Husk også en IDE fx Intellij.
 
-* Vælger du .Net(C#) kommer du til at bruge Firely .Net SDK. Det kræver .Net 6. Husk en IDE fx Visual Studio eller VS Code
+* Vælger du .NET(C#) kommer du til at bruge Firely .NET SDK. Det kræver .NET 6. Husk en IDE fx Visual Studio eller VS Code
 
 ### Opret et projekt, find FHIR-pakkerne, test
 
-#### Hapi FHIR
-Make sure that “Gradle support” is working.
+#### HAPI FHIR
+Make sure that “Gradle support” or "Maven" is working.
 
 Start new single gradle project, go to the build.gradle and add the following Gradle dependencies:
 
 ```
 // https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-base
-    implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-base', version: '5.1.0'
+    implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-base', version: '6.1.0'
 
   // https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-r4
-    implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-structures-r4', version: '5.1.0'
+    implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-structures-r4', version: '6.1.0'
 
     // https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-client
-    implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-client', version: '5.1.0'
+    implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-client', version: '6.1.0'
 
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
-    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha1'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.33'
 ```
 
-More repositories and possibly newer version can be found at: <https://mvnrepository.com> 
+-for Maven the dependencies are the same but expressed differently.
 
-Test your setup by making your first hapi FHIR application. Make a new java-class and run the following main class. It makes a search for patients named Chuck. Note that we use the hapi FHIR server in this example.
+
+Test your setup by making your first HAPI FHIR application. Make a new Java-class and run the following main class. It makes a search for patients with the familiy name 'duck'.
 
 ```
-import ca.uhn.fhir.context.FhirContext;
-import ca.uhn.fhir.rest.client.api.IGenericClient;
-import java.io.IOException;
-import org.hl7.fhir.r4.model.Bundle;
-import org.hl7.fhir.r4.model.Patient;
-
-public class SearchForChuck {
-
-
-        public static void main(String[] args) throws IOException {
 // We're connecting to a R4 compliant server in this example
-            FhirContext ctx = FhirContext.forR4();
-            String serverBase = "http://hapi.fhir.org/baseR4";
+FhirContext ctx = FhirContext.forR4();
+String serverBase = "https://hapi.fhir.org/baseR4";
 
-            IGenericClient client = ctx.newRestfulGenericClient(serverBase);
+IGenericClient client = ctx.newRestfulGenericClient(serverBase);
 
 // Perform a search
-            Bundle results = client
-                    .search()
-                    .forResource(Patient.class)
-                    .where(Patient.FAMILY.matches().value("Chuck"))
-                    .returnBundle(org.hl7.fhir.r4.model.Bundle.class)
-                    .execute();
+Bundle results = client
+   .search()
+   .forResource(Patient.class)
+   .where(Patient.FAMILY.matches().value("duck"))
+   .returnBundle(Bundle.class)
+   .execute();
 
-            System.out.println("Found " + results.getEntry().size() + " patients named 'Chuck'");
+System.out.println("Found " + results.getEntry().size() + " patients named 'duck'");
 
-        }
-
-    }
 ```
+
+Follow the documentation at https://hapifhir.io/hapi-fhir/docs/client/get_started.html for more guidance on the HAPI FHIR SDK.
 
 ### Case: Telemonitorering af psykisk helbred blandt unge mennesker
 Der er en stigning i depression/angst blandt unge, og et presset psykiatrisk system. En psykiatrisk afdeling vil gerne, efter endt intensiv behandling af unges depression/angst undgå at følge samme opfølgningsforløb for alle patienter. De vil gerne kunne fange dem tidligt, der får det værre, og undgå at indkalde dem, der har det godt. Praktiserende læger vil gerne bruge samme løsning til at monitorere patienter, hvor der er mistanke om dårligt psykisk helbred, med henblik på at vurdere behov for behandling.
