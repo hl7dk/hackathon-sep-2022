@@ -10,10 +10,10 @@ Description: "FUT like eHealth QuestionnaireResponse"
 * source 1..
 * source only Reference(TelemedicinePatient or Practitioner or RelatedPerson)
 
-Instance: MentalHealthQuestionnaireResponseExample
-InstanceOf: MentalHealthQuestionnaireResponse
+Instance: TelemedicineQuestionnaireResponseExample
+InstanceOf: TelemedicineQuestionnaireResponse
 Usage: #example
-Title: "MentalHealthQuestionnaireResponseExample"
+Title: "TelemedicineQuestionnaireResponseExample"
 Description: "Example of a mental health questionnaire response"
 * extension[workflow-episodeOfCare].valueReference = Reference(EpisodeOfCareExample)
 * questionnaire = "http://hl7.org/fhir/Questionnaire/MentalHealthQuestionnaire"
