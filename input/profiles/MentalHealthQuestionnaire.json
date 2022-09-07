@@ -24,7 +24,7 @@
 				},
 				{
 					"linkId": "1.2",
-					"text": "Lyst til være sammen med andre",
+					"text": "Lyst til at være sammen med andre",
 					"type": "choice",
 					"answerValueSet": "http://hl7.dk/fhir/Hackathon-Sep-2022/ValueSet/DesireToBeWithOthersCodes"
 				},
