@@ -21,6 +21,8 @@ Til Hackathon er det vigtigt at du medbringer en computer med et kørende udvikl
 
 * Vælger du .NET(C#) kommer du til at bruge Firely .NET SDK. Det kræver .NET 6. Husk en IDE fx Visual Studio eller VS Code
 
+Dokumentation af Firely .NET SDK kan findes her: <https://docs.fire.ly/projects/Firely-NET-SDK/>
+
 ### Opret et projekt, find FHIR-pakkerne, test
 
 #### HAPI FHIR
