@@ -127,4 +127,4 @@ Pointen med dagen er, at gøre jer fortrolige med FHIR og den tilhørende dokumn
 
 Et telemedicinsk forløb er i denne implementering en episode-of-care, men det kan ikke oprettes uden at kende fx patienten. Enten skal man bundle en episode-of-care med de andre ressourses, som den er afhængig af. Ellers kan man sørge for at henvise til de rette instanser, der allerede ligger på serveren.
 
-Når I er klar til at sende til serveren skal denne ***[serverBase](https://hackathon2022.tcs.trifork.dev/) anvendes ***, for at vi får data på Hackathon2022 FHIR-serveren, der validerer instanserne, frem for en generel FHIR server ude i verden.
+Når I er klar til at sende til serveren skal denne ***[https://hackathon2022.tcs.trifork.dev/fhir/metadata](https://hackathon2022.tcs.trifork.dev/fhir/metadata) anvendes ***, for at vi får data på Hackathon2022 FHIR-serveren, der validerer instanserne, frem for en generel FHIR server ude i verden.
