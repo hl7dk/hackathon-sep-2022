@@ -2,3 +2,4 @@ FUT isn't currently published to the global FHIR registry. Hence it takes some w
 
 The rendered CI build of the IG can be found at https://build.fhir.org/ig/hl7dk/hackathon-sep-2022
 
+
